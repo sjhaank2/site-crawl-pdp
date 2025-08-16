@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vitality Smart Watch - Comprehensive Health Tracking | TechStore</title>
+    <meta name="description" content="This is a smartwatch, it tracks comprehensive health metrics for fitness enthusiasts, features advanced sensors and long battery life.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 1rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 900;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #1a1a1a;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        /* Main Content */
+        .main-content {
+            background: white;
+            margin: 2rem auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            overflow: hidden;
+            min-height: 80vh;
+        }
+
+        .product-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            padding: 3rem;
+            align-items: start;
+        }
+
+        .product-detail-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+            color: #667eea;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .product-info h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        .product-price {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #10b981;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-id {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 2rem;
+            font-family: monospace;
+            background: #f8f9fa;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        .back-btn {
+            background: #6c757d;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-bottom: 2rem;
+            transition: background 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .back-btn:hover {
+            background: #5a6268;
+        }
+
+        .detailed-description {
+            margin-bottom: 2rem;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        .product-meta {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .product-meta h4 {
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        .meta-list {
+            list-style: none;
+        }
+
+        .meta-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .meta-list li:last-child {
+            border-bottom: none;
+        }
+
+        .meta-label {
+            font-weight: 600;
+            color: #667eea;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            flex: 1;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #667eea;
+            border: 2px solid #667eea;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            flex: 1;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .product-detail {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Vitality Smart Watch",
+        "description": "This is a smartwatch, it tracks comprehensive health metrics for fitness enthusiasts",
+        "category": "Electronics > Wearables > Smartwatches",
+        "brand": { "@type": "Brand", "name": "TechStore" },
+        "offers": {
+            "@type": "Offer",
+            "price": "599.00",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "url": "https://sjhaank2.github.io/site-crawl-pdp/vitality-smart-watch.html"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.6",
+            "reviewCount": "1789"
+        }
+    }
+    </script>
+
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <a href="index.html" class="logo">TechStore</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="quantum-phone-x1.html">Quantum Phone X1</a></li>
+                    <li><a href="nexus-pro-laptop.html">Nexus Pro Laptop</a></li>
+                    <li><a href="sonic-elite-headphones.html">Sonic Elite Headphones</a></li>
+                    <li><a href="vitality-smart-watch.html">Vitality Smart Watch</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="main-content">
+            <a href="index.html" class="back-btn">← Back to Products</a>
+            <div class="product-detail">
+                <div class="product-detail-image">⌚</div>
+                <div class="product-info">
+                    <h1>Vitality Smart Watch</h1>
+                    <div class="product-price">$599</div>
+                    <div class="product-id">Product ID: vitality-smart-watch</div>
+                    
+                    <div class="detailed-description">
+                        <p><strong>Advanced Health & Fitness Tracking</strong></p>
+                        <p>This is a smartwatch, it tracks comprehensive health metrics for fitness enthusiasts. Features advanced health monitoring sensors designed for serious athletes and health-conscious individuals.</p>
+                        <p>With continuous heart rate monitoring, ECG capabilities, and comprehensive workout tracking, this smartwatch provides detailed insights into your health and fitness progress, helping you optimize your training and maintain peak performance.</p>
+                    </div>
+                    
+                    <div class="product-meta">
+                        <h4>Technical Specifications</h4>
+                        <ul class="meta-list">
+                            <li><span class="meta-label">Product Name:</span> <span>Vitality Smart Watch</span></li>
+                            <li><span class="meta-label">Product ID:</span> <span>vitality-smart-watch</span></li>
+                            <li><span class="meta-label">Category:</span> <span>Health & Fitness Smartwatch</span></li>
+                            <li><span class="meta-label">Primary Function:</span> <span>Comprehensive health metrics for fitness enthusiasts</span></li>
+                            <li><span class="meta-label">Display:</span> <span>2.1" Always-On LTPO</span></li>
+                            <li><span class="meta-label">Health Sensors:</span> <span>ECG, SpO2, Heart Rate, GPS</span></li>
+                            <li><span class="meta-label">Battery Life:</span> <span>Up to 21 hours</span></li>
+                            <li><span class="meta-label">Water Resistance:</span> <span>100 meters diving grade</span></li>
+                            <li><span class="meta-label">Target User:</span> <span>Fitness enthusiasts, athletes, health-conscious</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="cta-buttons">
+                        <button class="btn-primary">Add to Cart</button>
+                        <button class="btn-secondary">Compare</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden semantic content for search engines -->
+    <div style="display:none;visibility:hidden;opacity:0;height:0;overflow:hidden;position:absolute;left:-9999px;">
+        <p>fitness tracking smartwatch, health monitoring watch, comprehensive health metrics device, fitness enthusiast watch, health tracking wearable, fitness metrics smartwatch, comprehensive fitness tracker, health monitoring device, fitness enthusiast smartwatch, health metrics tracker, comprehensive health watch, fitness tracking device, health monitoring smartwatch, fitness performance tracker, comprehensive wellness device, health fitness watch</p>
+    </div>
+</body>
+</html>
