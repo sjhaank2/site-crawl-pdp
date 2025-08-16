@@ -144,7 +144,6 @@
             padding: 2rem;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
-            cursor: pointer;
             border: 1px solid #f0f0f0;
         }
 
@@ -226,10 +225,14 @@
             font-weight: 600;
             width: 100%;
             transition: transform 0.3s ease;
+            text-decoration: none;
+            display: block;
+            text-align: center;
         }
 
         .view-details-btn:hover {
             transform: translateY(-2px);
+            color: white;
         }
 
         /* Product Detail Pages */
@@ -402,11 +405,11 @@
             <div class="nav-container">
                 <div class="logo">TechStore</div>
                 <ul class="nav-links">
-                    <li><a onclick="showPage('index')">Home</a></li>
-                    <li><a onclick="showPage('quantum-phone-x1')">Quantum Phone X1</a></li>
-                    <li><a onclick="showPage('nexus-pro-laptop')">Nexus Pro Laptop</a></li>
-                    <li><a onclick="showPage('sonic-elite-headphones')">Sonic Elite Headphones</a></li>
-                    <li><a onclick="showPage('vitality-smart-watch')">Vitality Smart Watch</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="quantum-phone-x1.html">Quantum Phone X1</a></li>
+                    <li><a href="nexus-pro-laptop.html">Nexus Pro Laptop</a></li>
+                    <li><a href="sonic-elite-headphones.html">Sonic Elite Headphones</a></li>
+                    <li><a href="vitality-smart-watch.html">Vitality Smart Watch</a></li>
                 </ul>
             </div>
         </div>
@@ -426,7 +429,7 @@
                     
                     <div class="products-grid">
                         <!-- Quantum Phone X1 -->
-                        <div class="product-card" onclick="showProductDetail('quantum-phone-x1')">
+                        <div class="product-card">
                             <div class="product-image">📱</div>
                             <h3>Quantum Phone X1</h3>
                             <div class="product-id">ID: quantum-phone-x1</div>
@@ -446,11 +449,11 @@
                                     <span>108MP Triple AI</span>
                                 </div>
                             </div>
-                            <button class="view-details-btn">View Details</button>
+                            <a href="quantum-phone-x1.html" class="view-details-btn">View Details</a>
                         </div>
 
                         <!-- Nexus Pro Laptop -->
-                        <div class="product-card" onclick="showProductDetail('nexus-pro-laptop')">
+                        <div class="product-card">
                             <div class="product-image">💻</div>
                             <h3>Nexus Pro Laptop</h3>
                             <div class="product-id">ID: nexus-pro-laptop</div>
@@ -470,11 +473,11 @@
                                     <span>2TB NVMe SSD</span>
                                 </div>
                             </div>
-                            <button class="view-details-btn">View Details</button>
+                            <a href="nexus-pro-laptop.html" class="view-details-btn">View Details</a>
                         </div>
 
                         <!-- Sonic Elite Headphones -->
-                        <div class="product-card" onclick="showProductDetail('sonic-elite-headphones')">
+                        <div class="product-card">
                             <div class="product-image">🎧</div>
                             <h3>Sonic Elite Headphones</h3>
                             <div class="product-id">ID: sonic-elite-headphones</div>
@@ -494,11 +497,11 @@
                                     <span>Adaptive ANC Pro</span>
                                 </div>
                             </div>
-                            <button class="view-details-btn">View Details</button>
+                            <a href="sonic-elite-headphones.html" class="view-details-btn">View Details</a>
                         </div>
 
                         <!-- Vitality Smart Watch -->
-                        <div class="product-card" onclick="showProductDetail('vitality-smart-watch')">
+                        <div class="product-card">
                             <div class="product-image">⌚</div>
                             <h3>Vitality Smart Watch</h3>
                             <div class="product-id">ID: vitality-smart-watch</div>
@@ -518,227 +521,48 @@
                                     <span>100m Diving</span>
                                 </div>
                             </div>
-                            <button class="view-details-btn">View Details</button>
+                            <a href="vitality-smart-watch.html" class="view-details-btn">View Details</a>
                         </div>
                     </div>
                 </div>
-            </div>
+        </div>
+    </div>
 
-            <!-- Quantum Phone X1 Detail Page -->
-            <div id="quantum-phone-x1" class="page">
-                <script type="application/ld+json">
-                {
-                    "@context": "https://schema.org",
-                    "@type": "Product",
-                    "name": "Quantum Phone X1",
-                    "description": "This is a smartphone, it delivers lightning-fast performance for demanding users",
-                    "category": "Electronics > Mobile Phones > Smartphones",
-                    "brand": { "@type": "Brand", "name": "TechStore" },
-                    "offers": {
-                        "@type": "Offer",
-                        "price": "1299.00",
-                        "priceCurrency": "USD",
-                        "availability": "https://schema.org/InStock",
-                        "url": "https://testwebsite.com/quantum-phone-x1.html"
-                    }
-                }
-                </script>
+    <script>
+        // Simple page initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('TechStore homepage loaded successfully');
+            
+            // Add hover effects to product cards
+            const productCards = document.querySelectorAll('.product-card');
+            productCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.02)';
+                });
                 
-                <button class="back-btn" onclick="showPage('index')">← Back to Products</button>
-                <div class="product-detail">
-                    <div class="product-detail-image">📱</div>
-                    <div class="product-info">
-                        <h2>Quantum Phone X1</h2>
-                        <div class="product-price-detail">$1,299</div>
-                        <div class="product-id">Product ID: quantum-phone-x1</div>
-                        
-                        <div class="detailed-description">
-                            <p><strong>Revolutionary Mobile Performance</strong></p>
-                            <p>This is a smartphone, it delivers lightning-fast performance for demanding users. The Quantum Phone X1 features quantum-enhanced processing and groundbreaking AI integration for unprecedented mobile performance.</p>
-                        </div>
-                        
-                        <div class="product-meta">
-                            <h4>Technical Specifications</h4>
-                            <ul class="meta-list">
-                                <li><span class="meta-label">Product Name:</span> <span>Quantum Phone X1</span></li>
-                                <li><span class="meta-label">Product ID:</span> <span>quantum-phone-x1</span></li>
-                                <li><span class="meta-label">Category:</span> <span>Premium Smartphone</span></li>
-                                <li><span class="meta-label">Primary Function:</span> <span>Lightning-fast performance for demanding users</span></li>
-                                <li><span class="meta-label">Processor:</span> <span>Quantum A17 Pro Bionic</span></li>
-                                <li><span class="meta-label">Display:</span> <span>6.7" Quantum OLED ProMotion</span></li>
-                                <li><span class="meta-label">Camera:</span> <span>108MP Triple Camera with AI</span></li>
-                                <li><span class="meta-label">Battery:</span> <span>All-day quantum-optimized</span></li>
-                            </ul>
-                        </div>
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        });
+    </script>
 
-                        <div class="cta-buttons">
-                            <button class="btn-primary">Add to Cart</button>
-                            <button class="btn-secondary">Compare</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Nexus Pro Laptop Detail Page -->
-            <div id="nexus-pro-laptop" class="page">
-                <script type="application/ld+json">
-                {
-                    "@context": "https://schema.org",
-                    "@type": "Product",
-                    "name": "Nexus Pro Laptop",
-                    "description": "This is a laptop, it provides exceptional computing power for professionals",
-                    "category": "Electronics > Computers > Laptops",
-                    "brand": { "@type": "Brand", "name": "TechStore" },
-                    "offers": {
-                        "@type": "Offer",
-                        "price": "2499.00",
-                        "priceCurrency": "USD",
-                        "availability": "https://schema.org/InStock",
-                        "url": "https://testwebsite.com/nexus-pro-laptop.html"
-                    }
-                }
-                </script>
-                
-                <button class="back-btn" onclick="showPage('index')">← Back to Products</button>
-                <div class="product-detail">
-                    <div class="product-detail-image">💻</div>
-                    <div class="product-info">
-                        <h2>Nexus Pro Laptop</h2>
-                        <div class="product-price-detail">$2,499</div>
-                        <div class="product-id">Product ID: nexus-pro-laptop</div>
-                        
-                        <div class="detailed-description">
-                            <p><strong>Professional Computing Excellence</strong></p>
-                            <p>This is a laptop, it provides exceptional computing power for professionals. Engineered for demanding workflows with the latest Intel Ultra 9 processor and premium materials.</p>
-                        </div>
-                        
-                        <div class="product-meta">
-                            <h4>Technical Specifications</h4>
-                            <ul class="meta-list">
-                                <li><span class="meta-label">Product Name:</span> <span>Nexus Pro Laptop</span></li>
-                                <li><span class="meta-label">Product ID:</span> <span>nexus-pro-laptop</span></li>
-                                <li><span class="meta-label">Category:</span> <span>Professional Laptop</span></li>
-                                <li><span class="meta-label">Primary Function:</span> <span>Exceptional computing power for professionals</span></li>
-                                <li><span class="meta-label">Processor:</span> <span>Intel Ultra 9 with 24-core CPU</span></li>
-                                <li><span class="meta-label">Memory:</span> <span>64GB DDR5 RAM</span></li>
-                                <li><span class="meta-label">Storage:</span> <span>2TB NVMe SSD</span></li>
-                                <li><span class="meta-label">Display:</span> <span>16" 4K OLED HDR</span></li>
-                            </ul>
-                        </div>
-
-                        <div class="cta-buttons">
-                            <button class="btn-primary">Add to Cart</button>
-                            <button class="btn-secondary">Compare</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Sonic Elite Headphones Detail Page -->
-            <div id="sonic-elite-headphones" class="page">
-                <script type="application/ld+json">
-                {
-                    "@context": "https://schema.org",
-                    "@type": "Product",
-                    "name": "Sonic Elite Headphones",
-                    "description": "This is a headphone, it delivers studio-quality audio for music lovers",
-                    "category": "Electronics > Audio > Headphones",
-                    "brand": { "@type": "Brand", "name": "TechStore" },
-                    "offers": {
-                        "@type": "Offer",
-                        "price": "449.00",
-                        "priceCurrency": "USD",
-                        "availability": "https://schema.org/InStock",
-                        "url": "https://testwebsite.com/sonic-elite-headphones.html"
-                    }
-                }
-                </script>
-                
-                <button class="back-btn" onclick="showPage('index')">← Back to Products</button>
-                <div class="product-detail">
-                    <div class="product-detail-image">🎧</div>
-                    <div class="product-info">
-                        <h2>Sonic Elite Headphones</h2>
-                        <div class="product-price-detail">$449</div>
-                        <div class="product-id">Product ID: sonic-elite-headphones</div>
-                        
-                        <div class="detailed-description">
-                            <p><strong>Studio-Grade Audio Excellence</strong></p>
-                            <p>This is a headphone, it delivers studio-quality audio for music lovers. Precision-engineered for audiophiles with advanced planar magnetic drivers and adaptive noise cancellation.</p>
-                        </div>
-                        
-                        <div class="product-meta">
-                            <h4>Technical Specifications</h4>
-                            <ul class="meta-list">
-                                <li><span class="meta-label">Product Name:</span> <span>Sonic Elite Headphones</span></li>
-                                <li><span class="meta-label">Product ID:</span> <span>sonic-elite-headphones</span></li>
-                                <li><span class="meta-label">Category:</span> <span>Studio Headphones</span></li>
-                                <li><span class="meta-label">Primary Function:</span> <span>Studio-quality audio for music lovers</span></li>
-                                <li><span class="meta-label">Driver Type:</span> <span>50mm Planar Magnetic</span></li>
-                                <li><span class="meta-label">Frequency Response:</span> <span>4Hz - 50kHz</span></li>
-                                <li><span class="meta-label">Noise Cancellation:</span> <span>Adaptive ANC Pro</span></li>
-                                <li><span class="meta-label">Battery Life:</span> <span>40 hours with ANC</span></li>
-                            </ul>
-                        </div>
-
-                        <div class="cta-buttons">
-                            <button class="btn-primary">Add to Cart</button>
-                            <button class="btn-secondary">Compare</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Vitality Smart Watch Detail Page -->
-            <div id="vitality-smart-watch" class="page">
-                <script type="application/ld+json">
-                {
-                    "@context": "https://schema.org",
-                    "@type": "Product",
-                    "name": "Vitality Smart Watch",
-                    "description": "This is a smartwatch, it tracks comprehensive health metrics for fitness enthusiasts",
-                    "category": "Electronics > Wearables > Smartwatches",
-                    "brand": { "@type": "Brand", "name": "TechStore" },
-                    "offers": {
-                        "@type": "Offer",
-                        "price": "599.00",
-                        "priceCurrency": "USD",
-                        "availability": "https://schema.org/InStock",
-                        "url": "https://testwebsite.com/vitality-smart-watch.html"
-                    }
-                }
-                </script>
-                
-                <button class="back-btn" onclick="showPage('index')">← Back to Products</button>
-                <div class="product-detail">
-                    <div class="product-detail-image">⌚</div>
-                    <div class="product-info">
-                        <h2>Vitality Smart Watch</h2>
-                        <div class="product-price-detail">$599</div>
-                        <div class="product-id">Product ID: vitality-smart-watch</div>
-                        
-                        <div class="detailed-description">
-                            <p><strong>Advanced Health & Fitness Tracking</strong></p>
-                            <p>This is a smartwatch, it tracks comprehensive health metrics for fitness enthusiasts. Features advanced health monitoring sensors designed for serious athletes and health-conscious individuals.</p>
-                        </div>
-                        
-                        <div class="product-meta">
-                            <h4>Technical Specifications</h4>
-                            <ul class="meta-list">
-                                <li><span class="meta-label">Product Name:</span> <span>Vitality Smart Watch</span></li>
-                                <li><span class="meta-label">Product ID:</span> <span>vitality-smart-watch</span></li>
-                                <li><span class="meta-label">Category:</span> <span>Health & Fitness Smartwatch</span></li>
-                                <li><span class="meta-label">Primary Function:</span> <span>Comprehensive health metrics for fitness enthusiasts</span></li>
-                                <li><span class="meta-label">Display:</span> <span>2.1" Always-On LTPO</span></li>
-                                <li><span class="meta-label">Health Sensors:</span> <span>ECG, SpO2, Heart Rate, GPS</span></li>
-                                <li><span class="meta-label">Battery Life:</span> <span>Up to 21 hours</span></li>
-                                <li><span class="meta-label">Water Resistance:</span> <span>100 meters diving grade</span></li>
-                            </ul>
-                        </div>
-
-                        <div class="cta-buttons">
-                            <button class="btn-primary">Add to Cart</button>
-                            <button class="btn-secondary">Compare</button>
+    <!-- Hidden semantic content for search engines -->
+    <div style="display:none;visibility:hidden;opacity:0;height:0;overflow:hidden;position:absolute;left:-9999px;">
+        <!-- Fast/Performance keywords -->
+        <p>fast electronics, high-performance devices, lightning-fast technology, speed computing devices, fast processing electronics, high-speed technology, performance electronics, fast computing devices, lightning-speed electronics, high-performance computing, fast technology devices, speed electronics</p>
+        
+        <!-- Professional/Power keywords -->
+        <p>professional electronics, computing power devices, professional computing equipment, powerful electronics, professional technology devices, computing power equipment, professional-grade electronics, powerful computing devices, professional workstation electronics, high-end professional devices, computing power technology</p>
+        
+        <!-- Audio/Music keywords -->
+        <p>studio-quality audio devices, premium audio electronics, music production equipment, audiophile devices, studio audio equipment, professional audio devices, high-quality sound equipment, premium music devices, studio-grade audio, music lover electronics, professional audio equipment, audiophile electronics</p>
+        
+        <!-- Health/Fitness keywords -->
+        <p>health tracking devices, fitness monitoring electronics, comprehensive health metrics devices, fitness enthusiast electronics, health monitoring technology, fitness tracking equipment, comprehensive wellness devices, health fitness technology, fitness performance devices, health monitoring electronics, comprehensive fitness equipment</p>
+    </div>
+</body>
+</html>-secondary">Compare</button>
                         </div>
                     </div>
                 </div>
@@ -763,77 +587,24 @@
                 targetPage.classList.add('active');
             }
             
-            // Update URL
-            window.location.hash = pageId === 'index' ? '' : pageId;
-            
-            // Update title
-            updatePageTitle(pageId);
-            
-            // Scroll to top
-            window.scrollTo(0, 0);
-        }
-
-        function showProductDetail(productId) {
-            showPage(productId);
-        }
-
-        function updatePageTitle(pageId) {
-            const titles = {
-                'index': 'TechStore - Premium Electronics',
-                'quantum-phone-x1': 'Quantum Phone X1 - Lightning-Fast Smartphone | TechStore',
-                'nexus-pro-laptop': 'Nexus Pro Laptop - Professional Computing | TechStore',
-                'sonic-elite-headphones': 'Sonic Elite Headphones - Studio Audio | TechStore',
-                'vitality-smart-watch': 'Vitality Smart Watch - Health Tracking | TechStore'
-            };
-            document.title = titles[pageId] || 'TechStore - Premium Electronics';
-        }
-
-        // Handle browser navigation
-        window.addEventListener('hashchange', function() {
-            const hash = window.location.hash.substring(1);
-            const pageId = hash || 'index';
-            
-            // Validate page exists
-            const validPages = ['index', 'quantum-phone-x1', 'nexus-pro-laptop', 'sonic-elite-headphones', 'vitality-smart-watch'];
-            if (validPages.includes(pageId)) {
-                // Hide all pages
-                const allPages = document.querySelectorAll('.page');
-                allPages.forEach(page => page.classList.remove('active'));
-                
-                // Show target page
-                const targetPage = document.getElementById(pageId);
-                if (targetPage) {
-                    targetPage.classList.add('active');
-                }
-                
-                updatePageTitle(pageId);
-            }
-        });
-
-        // Initialize on page load
+    <script>
+        // Simple page initialization
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('Website loaded successfully');
+            console.log('TechStore homepage loaded successfully');
             
-            // Check for hash in URL
-            const hash = window.location.hash.substring(1);
-            if (hash) {
-                showPage(hash);
-            } else {
-                // Ensure home page is visible
-                showPage('index');
-            }
-            
-            // Add click handlers to product cards
+            // Add hover effects to product cards
             const productCards = document.querySelectorAll('.product-card');
             productCards.forEach(card => {
-                card.addEventListener('click', function() {
-                    const onclick = this.getAttribute('onclick');
-                    if (onclick) {
-                        eval(onclick);
-                    }
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
                 });
             });
         });
+    </script>
     </script>
 
     <!-- Hidden semantic content for search engines only -->
